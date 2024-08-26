@@ -13,22 +13,22 @@ const navItems = [
 const Navbar = () => {
   return (
     <header>
-      <nav className='px-16 flex '>
+      <nav className='px-16 py-5 flex justify-between'>
         <img src={assets.logo} alt="" />
-        <ul>
+        <ul className='md:flex items-center'>
           {
             navItems.map(({path, link}) => 
-              <li>
-                <NavLink to={path}>{link}</NavLink>
+              <li className='px-10'>
+                <NavLink className={({isActive, isPending}) => isActive ? "active" : "pending"} to={path}>{link}</NavLink>
               </li>
             )
           }
         </ul>
-        <div>
+        <div className='md:flex'>
           <img src={assets.search_icon} alt="" />
           <img src={assets.basket_icon} alt="" />
+          <button>Sing in</button>
         </div>
-        <button>Sing in</button>
       </nav>
     </header>
   )

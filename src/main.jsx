@@ -7,13 +7,16 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+// page route
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
       {
-        
+        path: "/",
+        element: <Home />
       }
     ]
   },
