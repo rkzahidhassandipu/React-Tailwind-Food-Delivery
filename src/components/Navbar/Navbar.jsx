@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {assets} from "../../assets/assets";
 import { NavLink } from 'react-router-dom';
+import { FaBars } from "react-icons/fa";
+import { FaXmark } from 'react-icons/fa6';
 
 const navItems = [
   {path:"/", link:"Home"},
@@ -30,17 +32,31 @@ const Navbar = () => {
             )
           }
         </ul>
-        <div className='flex items-center'>
+        <div className='flex items-center md:justify-end'>
           <img className='mx-2 w-6 h-6' src={assets.search_icon} alt="" />
           <img className='mx-2 w-6 h-6' src={assets.basket_icon} alt="" />
           <button className='border border-orange-500 rounded-full w-24 py-1 mx-2'>Sing in</button>
+          <div className='md:hidden'>
+            <button onClick={toggleMenu} className='cursor-pointer ml-6'>
+              {
+                isMenuOpen ? <FaXmark /> : <FaBars />
+              }
+            </button>
+          </div>
         </div>
-        
-        <div>
-          
-        </div>
-
       </nav>
+
+      <div>
+        <ul className={`md:hidden px-16 py-4 space-y-4 ${isMenuOpen ? "transition-all ease-out duration-1000":"hidden"}`}>
+          {
+            navItems.map(({path, link}) => <li className='' key={path}>
+              <NavLink onClick={toggleMenu} to={path}>
+                {link}
+              </NavLink>
+            </li>)
+          }
+        </ul>
+      </div>
     </header>
   )
 }
