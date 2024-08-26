@@ -8,6 +8,10 @@ import {
 } from "react-router-dom";
 
 // page route
+import Home from "./Pages/Home.jsx"
+import Menu from "./Pages/Menu.jsx"
+import Contact from "./Pages/Contact.jsx"
+import Mobile_app from "./Pages/Mobile-app.jsx"
 
 const router = createBrowserRouter([
   {
@@ -17,6 +21,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
+      },
+      {
+        path: "/menu",
+        element: <Menu />
+      },
+      {
+        path: "/mobile-app",
+        element: <Mobile_app />
+      },
+      {
+        path: "/contact-us",
+        element: <Contact />
       }
     ]
   },
