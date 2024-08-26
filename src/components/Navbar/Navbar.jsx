@@ -5,28 +5,29 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <div className=' font-Outfit'>
+    <div className='flex justify-between px-20 py-5'>
         <img src={assets.logo} alt="" />
-        <ul>
-          <li>
+        <ul className='flex justify-center items-center '>
+          <li className='mx-6'>
             <Link to="/">home</Link>
           </li>
-          <li>
+          <li className='mx-6'>
             <Link to='/menu'>menu</Link>
           </li>
-          <li>
+          <li className='mx-6'>
             <Link to='/mobile'>mobile-app</Link>
           </li>
-          <li>
+          <li className='mx-6'>
             <Link to='/contact'>contact us</Link>
           </li>
         </ul>
-        <div>
+        <div className='flex'>
           <img src={assets.search_icon} alt="" />
           <div>
             <img src={assets.basket_icon} alt="" />
             <div></div>
           </div>
+          <button className='border w-32 rounded-full '>Sing in</button>
         </div>
     </div>
   )
