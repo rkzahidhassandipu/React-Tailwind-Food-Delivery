@@ -1,35 +1,36 @@
 import React from 'react';
 import {assets} from "../../assets/assets";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+const navItems = [
+  {path:"/", link:"Home"},
+  {path:"/menu", link:"menu"},
+  {path:"/mobile-app", link:"mobile-app"},
+  {path:"/contact-us", link:"contact us"},
+]
 
 
 const Navbar = () => {
   return (
-    <div className='flex justify-between px-20 py-5'>
+    <header>
+      <nav className='px-16 flex '>
         <img src={assets.logo} alt="" />
-        <ul className='flex justify-center items-center '>
-          <li className='mx-6'>
-            <Link to="/">home</Link>
-          </li>
-          <li className='mx-6'>
-            <Link to='/menu'>menu</Link>
-          </li>
-          <li className='mx-6'>
-            <Link to='/mobile'>mobile-app</Link>
-          </li>
-          <li className='mx-6'>
-            <Link to='/contact'>contact us</Link>
-          </li>
+        <ul>
+          {
+            navItems.map(({path, link}) => 
+              <li>
+                <NavLink to={path}>{link}</NavLink>
+              </li>
+            )
+          }
         </ul>
-        <div className='flex'>
+        <div>
           <img src={assets.search_icon} alt="" />
-          <div>
-            <img src={assets.basket_icon} alt="" />
-            <div></div>
-          </div>
-          <button className='border w-32 rounded-full '>Sing in</button>
+          <img src={assets.basket_icon} alt="" />
         </div>
-    </div>
+        <button>Sing in</button>
+      </nav>
+    </header>
   )
 }
 
