@@ -9,7 +9,9 @@ export default {
       fontFamily: {
         Outfit: ["Outfit", "sans-serif"],
       },
-      
+      backgroundImage: {
+        'header': "url('/src/assets/header_img.png')"
+      }
       
     },
   },

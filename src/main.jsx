@@ -12,6 +12,8 @@ import Home from "./Pages/Home/Home.jsx"
 import Menu from "./Pages/Menu/Menu.jsx"
 import Contact from "./Pages/Contact/Contact.jsx"
 import Mobile_app from "./Pages/Mobile/Mobile-app.jsx"
+import Cart from "./Pages/Cart/Cart.jsx"
+import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder.jsx"
 
 const router = createBrowserRouter([
   {
@@ -33,7 +35,19 @@ const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <Contact />
-      }
+      },
+      {
+        path: "/order",
+        element: <PlaceOrder />
+      },
+      {
+        path: "/cart",
+        element: <Cart />
+      },
+      {
+        path: "/contact-us",
+        element: <Contact />
+      },
     ]
   },
 ]);
