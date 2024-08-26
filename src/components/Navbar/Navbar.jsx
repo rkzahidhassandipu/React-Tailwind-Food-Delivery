@@ -35,8 +35,11 @@ const Navbar = () => {
           <img className='mx-2 w-6 h-6' src={assets.basket_icon} alt="" />
           <button className='border border-orange-500 rounded-full w-24 py-1 mx-2'>Sing in</button>
         </div>
-
         
+        <div>
+          
+        </div>
+
       </nav>
     </header>
   )
