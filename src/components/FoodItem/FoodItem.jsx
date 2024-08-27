@@ -1,8 +1,10 @@
 import React from 'react'
 
-const FoodItem = () => {
+const FoodItem = ({id, name, price, description, image}) => {
   return (
-    <div>FoodItem</div>
+    <div>
+
+    </div>
   )
 }
 
