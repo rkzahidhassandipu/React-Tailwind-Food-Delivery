@@ -9,13 +9,13 @@ const FoodItem = ({id, name, price, description, image}) => {
                 <img className='rounded-s-xl rounded-se-lg' src={image} alt="" />
             </div>
 
-            <div className=''>
-                <div>
-                    <p>{name}</p>
-                    <img src={assets.rating_starts} alt="" />
+            <div className='p-3'>
+                <div className='flex flex-row justify-between items-center'>
+                    <p className='text-2xl'>{name}</p>
+                    <img className='h-5' src={assets.rating_starts} alt="" />
                 </div>
-                <p>{description}</p>
-                <p>$ {price}</p>
+                <p className='text-left py-2'>{description}</p>
+                <p className='text-orange-400 font-semibold text-2xl text-left'>$ {price}</p>
             </div>
         </div>
     </div>
