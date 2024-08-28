@@ -12,7 +12,7 @@ const navItems = [
 ]
 
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className='flex items-center md:justify-end'>
           <img className='mx-2 w-6 h-6' src={assets.search_icon} alt="" />
           <img className='mx-2 w-6 h-6' src={assets.basket_icon} alt="" />
-          <button className='border border-orange-500 rounded-full w-24 py-1 mx-2'>Sing in</button>
+          <button className='border border-orange-500 rounded-full w-24 py-1 mx-2' onClick={() => setShowLogin(true)}>Sing in</button>
           <div className='md:hidden'>
             <button onClick={toggleMenu} className='cursor-pointer ml-6'>
               {
