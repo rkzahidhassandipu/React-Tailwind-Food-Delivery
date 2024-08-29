@@ -23,7 +23,7 @@ const Navbar = ({setShowLogin}) => {
   return (
     <header className='mx-auto '>
       <nav className='px-16 py-5 flex justify-between'>
-        <img className='w-20 h-8' src={assets.logo} alt="" />
+        <Link to='/'> <img className='w-20 h-8' src={assets.logo} alt="" /></Link>
         <ul className='md:flex items-center hidden'>
           {
             navItems.map(({path, link}) => 

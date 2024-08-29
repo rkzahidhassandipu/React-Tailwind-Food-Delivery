@@ -2,27 +2,35 @@ import React, { useContext } from 'react';
 import { StoreContext } from '../../context/StoreContext';
 
 const CartItems = ({ category }) => {
-    const { food_list } = useContext(StoreContext);
-
-    // Filter the food_list by category
-    const filteredFood = food_list.filter(food => food.category === category);
-
+    const {cartItems, food_list, removeFromCart} = useContext(StoreContext)
     return (
         <div>
-           <h2>Top dishes near you</h2>
-           <div>
-            {
+            <div>
+                <div>
+                <p>Items</p>
+                <p>Title</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>Total</p>
+                <p>Remove</p>
+                </div>
+        
+                <br />
+                <hr />
+                {
                 food_list.map((item, index) => {
-                    {console.log(category, item.category)}
-                    if(category === "All" || category === item.category){
-                        
+                    if(cartItems[item._id] > 0){
+                        return (
+                            <div>
+                                <img src={item.image} alt="" />
+                            </div>
+                        )
                     }
-                   
                 })
-            }
-           </div>
+                }
+            </div>
         </div>
-    );
+    )
 };
 
 export default CartItems;

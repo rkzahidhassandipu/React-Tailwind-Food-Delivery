@@ -16,7 +16,6 @@ const Home = () => {
       
       <StoreContextProvider>
         <FoodDisplay category={category} />
-        <Cart />
       </StoreContextProvider>
       <AppDownload />
     </div>

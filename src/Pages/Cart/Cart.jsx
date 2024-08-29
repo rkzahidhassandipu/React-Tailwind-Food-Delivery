@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
-import StoreContextProvider, {StoreContext} from '../../context/StoreContext';
+import React, { useState } from 'react'
+import StoreContextProvider from '../../context/StoreContext';
 import CartItems from '../../components/CartItems/CartItems';
 
 const Cart = () => {
