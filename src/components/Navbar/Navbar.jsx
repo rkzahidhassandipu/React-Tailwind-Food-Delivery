@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import {assets} from "../../assets/assets";
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from 'react-icons/fa6';
+import Cart from '../../Pages/Cart/Cart';
 
 const navItems = [
   {path:"/", link:"Home"},
@@ -34,7 +35,7 @@ const Navbar = ({setShowLogin}) => {
         </ul>
         <div className='flex items-center md:justify-end'>
           <img className='mx-2 w-6 h-6' src={assets.search_icon} alt="" />
-          <img className='mx-2 w-6 h-6' src={assets.basket_icon} alt="" />
+          <Link to='/cart'><img className='mx-2 w-6 h-6' src={assets.basket_icon} alt="" /></Link>
           <button className='border border-orange-500 rounded-full w-24 py-1 mx-2' onClick={() => setShowLogin(true)}>Sing in</button>
           <div className='md:hidden'>
             <button onClick={toggleMenu} className='cursor-pointer ml-6'>

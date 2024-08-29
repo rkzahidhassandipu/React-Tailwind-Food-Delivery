@@ -9,20 +9,27 @@ const StoreContextProvider = (props) => {
 
     const addToCart = (itemId) => {
         if(!cartItems[itemId]){
-            setCartItems((prev) => ({...prev,[itemId]:1}))      
+            setCartItems((prev) => ({...prev,[itemId]:1}));      
+        } else {
+            setCartItems((prev) => ({...prev, [itemId]:prev[itemId] + 1}));
         }
-        else{
-            setCartItems((prev) => ({...prev, [itemId]:prev[itemId]+1}))
-        }
-    }
+    };
 
     const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({prev, [itemId]:prev[itemId]-1}))
-    }
+        setCartItems((prev) => {
+            const newCartItems = { ...prev };
+            if (newCartItems[itemId] > 1) {
+                newCartItems[itemId] -= 1;
+            } else {
+                delete newCartItems[itemId];
+            }
+            return newCartItems;
+        });
+    };
 
     useEffect(() => {
-        console.log(cartItems)
-    }, [cartItems])
+        console.log(cartItems);
+    }, [cartItems]);
 
     const contextValue = {
         food_list,
@@ -31,6 +38,7 @@ const StoreContextProvider = (props) => {
         addToCart,
         removeFromCart
     };
+
     return (
         <StoreContext.Provider value={contextValue}>
             {props.children}
