@@ -1,11 +1,15 @@
-import React, { useContext } from 'react'
-// import {StoreContextProvider} from "../../context/StoreContext"
-import {StoreContext} from '../../context/StoreContext';
+import React, { useContext, useState } from 'react'
+import StoreContextProvider, {StoreContext} from '../../context/StoreContext';
 import CartItems from '../../components/CartItems/CartItems';
 
 const Cart = () => {
+  const [category, setCategory] = useState("All");
   return (
-    <CartItems />
+    <div>
+      <StoreContextProvider>
+        <CartItems category={category} />
+      </StoreContextProvider>
+    </div>
   )
 }
 

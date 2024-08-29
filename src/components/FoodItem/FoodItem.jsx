@@ -4,7 +4,7 @@ import { StoreContext } from '../../context/StoreContext';
 
 const FoodItem = ({id, name, price, description, image}) => {
     const [itemCount, setItemCount] = useState(0);
-    const {cartItems, addToCart, removeFromCart} = useContext(StoreContext)
+    const {cartItems, addToCart, removeFromCart} = useContext(StoreContext);
   return (
     <div className='inline-block w-[23.56%] gap-10 text-center mr-5 '>
         <div className='mt-10 transform rounded-lg  bg-white  dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg'>

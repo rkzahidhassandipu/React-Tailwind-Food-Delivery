@@ -4,6 +4,7 @@ import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
 import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'
 import StoreContextProvider from '../../context/StoreContext'
 import AppDownload from '../../components/AppDownload/AppDownload'
+import Cart from '../Cart/Cart'
 
 const Home = () => {
 
@@ -14,7 +15,8 @@ const Home = () => {
       <ExploreMenu category={category} setCategory={setCategory} />
       
       <StoreContextProvider>
-      <FoodDisplay category={category} />
+        <FoodDisplay category={category} />
+        <Cart />
       </StoreContextProvider>
       <AppDownload />
     </div>

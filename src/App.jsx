@@ -12,7 +12,8 @@ function App() {
     <div>
       {showLogin ? <Login setShowLogin={setShowLogin} /> : null}
       <Navbar setShowLogin={setShowLogin} />
-      <Outlet />
+        <Outlet />
+        
       <Footer/>
     </div>
   )
